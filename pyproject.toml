@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deux-corps"
+version = "3.0.0"
+description = "Simulation du problème à deux corps (Runge-Kutta 4, Verlet, Euler) avec interface Qt"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.5"]
+authors = [
+    { name = "Slimane Mouchou" },
+    { name = "Abderrazzak Aaouine" },
+    { name = "Youssef Es-bai" },
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "matplotlib>=3.6"]
+
+[project.scripts]
+deux-corps = "deux_corps.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
